@@ -74,12 +74,26 @@ Added the full site skeleton for Parity Insights LLC. Here is what was built and
 
 **Capabilities page (`/services`):** Three service areas are listed vertically, each with a large numbered label, a title, a description paragraph, and a bullet list of specific offerings.
 
-**Work page (`/projects`):** Four placeholder case study cards appear in a two-column grid (stacked on mobile). Each card shows category tags, a title, and three labeled fields — Problem, Approach, and Impact — so readers can quickly understand what was built and what it achieved.
+**Work page (`/projects`):** Case study cards appear in a two-column grid (stacked on mobile). Each card shows category tags, a duration label in the top-right corner, a title, and three labeled fields — Problem, Approach, and Impact. The page shows a clean "Case studies coming soon." placeholder when the projects list is empty.
 
-**About page (`/about`):** Opens with a large ethos statement, followed by a firm description paragraph and a founder note in a left-bordered callout. Below that, four operating principles are shown in a two-column grid.
+**About page (`/about`):** Opens with a large ethos statement, followed by a firm description paragraph and a founder note in a left-bordered callout. Below that, three operating principles are shown in a two-column grid.
 
 **Contact page (`/contact`):** A split layout with a form on the left (name, email, company, message) and contact information on the right (email, location, response time). On submission the form posts to Web3Forms and shows a confirmation message. Errors fall back to showing the direct email address.
 
 **Navigation:** A fixed top bar shows the site name on the left and navigation links on the right. On small screens it collapses into a hamburger menu that animates open. The overall design is monochrome — black background, white text, thin gray borders throughout.
 
 **Content files:** All editable copy — taglines, service descriptions, case study text, about content — lives in `src/content/` so it can be updated without touching any layout or component code.
+
+### Content & Copy Updates — October 2026
+
+Updated several pieces of text across the site to better reflect the firm's actual focus:
+
+**Home page:** The label above the hero headline was changed from "Technology & Management Consulting" to "Technology & Economic Consulting."
+
+**About page:** Firm description updated to describe Parity Insights as a technology and economic consulting practice that works on pro-bono projects alongside investors and small to large businesses. The principles section was trimmed from four items to three, removing the "High-Trust Systems" entry.
+
+**Projects page:** Removed the four placeholder case studies that were added during the initial build. The page now shows a "Case studies coming soon." message until real work is added. Each project card now also displays a duration label (e.g., "3 months") in the top-right corner of the tag row.
+
+**First real project added:** A pro-bono retail expansion engagement was added — a go-to-market and location analysis for a small business opening a second location in Virginia. The project is in progress, starting shortly, with an expected three-month timeline.
+
+**Contact form:** Connected to Web3Forms using a live access key so the contact form on the site now sends real email submissions.
