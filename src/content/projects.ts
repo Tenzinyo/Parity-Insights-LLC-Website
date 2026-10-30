@@ -10,6 +10,8 @@ export type Tag =
   | 'Automation'
   | 'Market Analysis'
   | 'Internal Tooling'
+  | 'Data Analysis'
+  | 'Software Architecture'
 
 export interface Project {
   id: string
@@ -28,4 +30,16 @@ export const projectsPage = {
 
 // Add real case studies here when ready.
 // Each entry needs: id, title, problem, approach, impact, and tags.
-export const projects: Project[] = []
+export const projects: Project[] = [
+  {
+      id: '01',          // unique, lowercase, hyphenated
+      title: 'Probono Client, Go To Market Strategy for Opening Second Store Location',  // short, descriptive
+      problem:
+        'Where and how should a small business opena. second location in Virginia, USA',
+      approach:
+        'Data analysis of income and target audience demographics in different cities in Virgnia, location scouting, budget analysis, business synergies, and operational planning for opening a second location',
+      impact:
+        'Currently working with the client to implement the strategy and open a second location in Virginia, USA',
+      tags: ['Market Analysis','Spatial Analytics','Python / Data Pipelines','Internal Tooling' ],           // pick from the Tag type above
+    },
+]
