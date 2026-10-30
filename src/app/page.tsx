@@ -52,7 +52,7 @@ export default function Home() {
       <section className="min-h-screen flex flex-col justify-center pt-16 px-6">
         <div className="max-w-6xl mx-auto w-full py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.25em] text-brand-muted mb-8">
-            Technology & Management Consulting
+            Technology & Economic Consulting
           </p>
 
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.92] text-white mb-8">
