@@ -15,7 +15,7 @@ import type { FormEvent } from 'react'
 import { site } from '@/content/site'
 
 // PLACEHOLDER — replace with your Web3Forms access key
-const FORM_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+const FORM_ACCESS_KEY = 'c8e6d7d6-e104-4dea-9477-dee20b53eb96'
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
