@@ -57,31 +57,10 @@ src/
 
 ---
 
-## Contact Form Setup
 
-The contact form on `/contact` uses [Web3Forms](https://web3forms.com) (free, no credit card required).
+### Deploy website on Vercel 
 
-1. Go to [web3forms.com](https://web3forms.com) and enter your email to receive a free Access Key.
-2. Open `src/app/contact/page.tsx` and replace `YOUR_WEB3FORMS_ACCESS_KEY` with your key.
-
-Alternatively, replace the `fetch()` call with any free form endpoint (Formspree, Basin, etc.), or change the form `action` to a `mailto:` link for a basic fallback.
-
----
-
-## Deploying for Free
-
-### Vercel (recommended)
-1. Push this repo to GitHub.
-2. Import the repo at [vercel.com](https://vercel.com) — it auto-detects Next.js.
-3. No additional settings needed. The `output: 'export'` config produces a static build.
-
-### Netlify
-1. Push to GitHub, connect to Netlify.
-2. Build command: `npm run build` — Publish directory: `out`
-
-### Cloudflare Pages
-1. Connect your GitHub repo.
-2. Build command: `npm run build` — Build output: `out`
+https://parity-insights-llc-website.vercel.app/projects/ 
 
 ---
 
