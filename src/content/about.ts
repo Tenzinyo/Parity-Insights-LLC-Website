@@ -2,7 +2,7 @@
 // Update the ethos, principles, and firm description here.
 
 export const about = {
-  headline: 'About Parity Insights',
+  headline: 'About Parity Insights LLC',
 
   ethos:
     'We believe the best technical work is invisible, systems that simply work, decisions that hold up under scrutiny, and strategies that survive contact with reality.',

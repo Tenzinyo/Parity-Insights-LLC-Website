@@ -38,8 +38,8 @@ export default function ProjectsPage() {
                 key={project.id}
                 className="bg-brand-off-black p-8 md:p-10 flex flex-col gap-6"
               >
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                {/* Tags + timeline */}
+                <div className="flex flex-wrap items-center gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -48,6 +48,11 @@ export default function ProjectsPage() {
                       {tag}
                     </span>
                   ))}
+                  {project.timeline && (
+                    <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 text-brand-muted ml-auto">
+                      {project.timeline}
+                    </span>
+                  )}
                 </div>
 
                 {/* Title */}
