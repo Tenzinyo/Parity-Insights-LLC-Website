@@ -26,20 +26,23 @@ npm run build
 
 ```
 src/
-├── app/              # Pages (Next.js App Router)
-│   ├── page.tsx      # Home
-│   ├── services/     # Capabilities page
-│   ├── projects/     # Case studies page
-│   ├── about/        # About page
-│   └── contact/      # Contact form page
+├── app/                          # Pages (Next.js App Router)
+│   ├── page.tsx                  # Home
+│   ├── services/                 # Capabilities page
+│   ├── projects/
+│   │   ├── page.tsx              # Case studies index page
+│   │   └── nova-retail-expansion/
+│   │       └── page.tsx          # NOVA case study (full detail)
+│   ├── about/                    # About page
+│   └── contact/                  # Contact form page
 ├── components/
-│   ├── Nav.tsx       # Top navigation bar
-│   └── Footer.tsx    # Site footer
-└── content/          # All editable text lives here — no JSX needed
-    ├── site.ts       # Company name, nav, email, footer
-    ├── services.ts   # Services / capabilities descriptions
-    ├── projects.ts   # Case study cards
-    └── about.ts      # About page copy and principles
+│   ├── Nav.tsx                   # Top navigation bar
+│   └── Footer.tsx                # Site footer
+└── content/                      # All editable text lives here — no JSX needed
+    ├── site.ts                   # Company name, nav, email, footer
+    ├── services.ts               # Services / capabilities descriptions
+    ├── projects.ts               # Case study cards
+    └── about.ts                  # About page copy and principles
 ```
 
 ---

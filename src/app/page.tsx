@@ -55,7 +55,7 @@ export default function Home() {
             Technology & Economic Consulting
           </p>
 
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.92] text-white mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.92] text-brand-black mb-8">
             {headline}
             <br />
             <span className="text-brand-muted">{subline}</span>
@@ -68,13 +68,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href={site.cta.primary.href}
-              className="inline-block bg-white text-black text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:bg-brand-dim transition-colors"
+              className="inline-block bg-brand-blue text-white text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:bg-brand-blue-dark transition-colors"
             >
               {site.cta.primary.label}
             </Link>
             <Link
               href={site.cta.secondary.href}
-              className="inline-block border border-brand-border text-white text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:border-white transition-colors"
+              className="inline-block border border-brand-border text-brand-black text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:border-brand-black transition-colors"
             >
               {site.cta.secondary.label}
             </Link>
@@ -92,8 +92,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-brand-border">
             {pillars.map((pillar) => (
               <div key={pillar.index} className="py-8 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0">
-                <span className="text-xs text-brand-muted font-mono">{pillar.index}</span>
-                <h3 className="mt-4 mb-4 text-lg font-semibold leading-snug text-white">
+                <span className="text-xs text-brand-blue font-mono font-semibold">{pillar.index}</span>
+                <h3 className="mt-4 mb-4 text-lg font-semibold leading-snug text-brand-black">
                   {pillar.title}
                 </h3>
                 <p className="text-sm text-brand-sub leading-relaxed">{pillar.description}</p>
@@ -103,8 +103,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Methodology ── */}
+      {/* ── Featured Case Study ── */}
       <section className="border-t border-brand-border px-6 py-24 md:py-32 bg-brand-near-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
+            <p className="text-xs uppercase tracking-[0.25em] text-brand-muted">Featured Work</p>
+            <Link
+              href="/projects"
+              className="text-xs uppercase tracking-widest text-brand-blue hover:text-brand-blue-dark transition-colors"
+            >
+              View All Case Studies →
+            </Link>
+          </div>
+
+          <div className="border border-brand-border bg-white p-8 md:p-10">
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {['Market Analysis', 'Spatial Analytics', 'Python / Data Pipelines', 'Data Analysis'].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] uppercase tracking-widest px-2.5 py-1 border border-brand-border text-brand-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+              <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-brand-orange text-white ml-auto">
+                Featured
+              </span>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-brand-black mb-4 leading-snug">
+                  Northern Virginia & Mid-Atlantic Retail Expansion Analysis
+                </h2>
+                <p className="text-sm text-brand-sub leading-relaxed mb-6">
+                  Census ACS demographic extraction across 5 Northern Virginia counties — evaluating
+                  female target density (ages 20–60), median household income, and commercial lease
+                  feasibility across a $3,500–$4,500/mo budget to identify optimal retail footprints
+                  for a DMV-based boutique brand.
+                </p>
+                <div className="flex flex-wrap gap-4 text-xs text-brand-muted mb-8">
+                  <span>5 counties evaluated</span>
+                  <span className="text-brand-border">|</span>
+                  <span>15+ commercial sites screened</span>
+                  <span className="text-brand-border">|</span>
+                  <span>4 submarkets shortlisted</span>
+                </div>
+                <Link
+                  href="/projects/nova-retail-expansion"
+                  className="inline-block bg-brand-blue text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 hover:bg-brand-blue-dark transition-colors"
+                >
+                  Read Case Study
+                </Link>
+              </div>
+
+              {/* Mini stats */}
+              <div className="grid grid-cols-2 gap-4 content-start">
+                {[
+                  { county: 'Fairfax', pop: '625,980', label: 'Female 20–59' },
+                  { county: 'Loudoun', hhi: '$205,596', label: 'Median HHI (25–44)' },
+                  { county: 'Arlington', pop: '153,432', label: 'Female 20–59' },
+                  { county: 'Prince William', pop: '273,112', label: 'Female 20–59' },
+                ].map((stat) => (
+                  <div key={stat.county} className="bg-brand-near-black p-4 border border-brand-border">
+                    <p className="text-[10px] uppercase tracking-widest text-brand-muted mb-1">{stat.county}</p>
+                    <p className="text-xl font-bold text-brand-blue">{stat.pop ?? stat.hhi}</p>
+                    <p className="text-[10px] text-brand-muted mt-0.5">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Methodology ── */}
+      <section className="border-t border-brand-border px-6 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           <p className="text-xs uppercase tracking-[0.25em] text-brand-muted mb-16">
             How We Work
@@ -113,11 +188,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {steps.map((step) => (
               <div key={step.number} className="flex gap-6">
-                <span className="shrink-0 w-8 h-8 border border-brand-border flex items-center justify-center text-xs font-mono text-brand-muted">
+                <span className="shrink-0 w-8 h-8 border border-brand-blue flex items-center justify-center text-xs font-mono text-brand-blue font-semibold">
                   {step.number}
                 </span>
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-3">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-black mb-3">
                     {step.label}
                   </h3>
                   <p className="text-sm text-brand-sub leading-relaxed">{step.description}</p>
@@ -129,14 +204,14 @@ export default function Home() {
       </section>
 
       {/* ── CTA band ── */}
-      <section className="border-t border-brand-border px-6 py-24 md:py-32">
+      <section className="border-t border-brand-border px-6 py-24 md:py-32 bg-brand-near-black">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white max-w-md">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-black max-w-md">
             Ready to move from data to decisions?
           </h2>
           <Link
             href="/contact"
-            className="shrink-0 inline-block bg-white text-black text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:bg-brand-dim transition-colors"
+            className="shrink-0 inline-block bg-brand-orange text-white text-xs uppercase tracking-widest font-semibold px-8 py-4 hover:bg-brand-orange-dark transition-colors"
           >
             Start a Conversation
           </Link>

@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-brand-off-black text-white font-sans antialiased">
+      <body className="bg-brand-off-black text-brand-black font-sans antialiased">
         <Nav />
         <main>{children}</main>
         <Footer />

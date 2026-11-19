@@ -5,12 +5,12 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-brand-border mt-32">
+    <footer className="border-t border-brand-border mt-32 bg-brand-near-black">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
           {/* Brand + tagline */}
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-black">
               {site.name}
             </p>
             <p className="text-xs text-brand-muted">{site.footer.tagline}</p>
@@ -22,7 +22,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs uppercase tracking-widest text-brand-muted hover:text-white transition-colors"
+                className="text-xs uppercase tracking-widest text-brand-muted hover:text-brand-black transition-colors"
               >
                 {link.label}
               </Link>
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-brand-border-dim flex flex-col sm:flex-row justify-between gap-3">
+        <div className="mt-12 pt-8 border-t border-brand-border flex flex-col sm:flex-row justify-between gap-3">
           <p className="text-xs text-brand-muted">
             &copy; {year} {site.legalName}. All rights reserved.
           </p>

@@ -10,16 +10,26 @@ const config: Config = {
       },
       colors: {
         brand: {
-          black:       '#000000',
-          'off-black': '#0A0A0A',
-          'near-black':'#111111',
-          card:        '#161616',
-          border:      '#262626',
-          'border-dim':'#1C1C1C',
-          muted:       '#737373',
-          sub:         '#A3A3A3',
-          dim:         '#D4D4D4',
-          white:       '#FFFFFF',
+          // Background surfaces
+          black:        '#0F172A',   // deep slate – headings & reversed text
+          'off-black':  '#FFFFFF',   // primary page background (crisp white)
+          'near-black': '#F8FAFC',   // alternate section background (off-white)
+          card:         '#F1F5F9',   // card surface
+          // Borders
+          border:       '#E2E8F0',   // clean slate border
+          'border-dim': '#CBD5E1',   // softer border
+          // Typography
+          muted:        '#64748B',   // muted labels / captions
+          sub:          '#334155',   // body copy
+          dim:          '#94A3B8',   // very muted text
+          // Legacy white kept for reversed text on colored surfaces
+          white:        '#FFFFFF',
+          // Primary brand accent – Royal/Cobalt Blue
+          blue:         '#2563EB',
+          'blue-dark':  '#1D4ED8',
+          // Secondary accent – Vibrant Orange
+          orange:       '#F97316',
+          'orange-dark':'#EA580C',
         },
       },
     },

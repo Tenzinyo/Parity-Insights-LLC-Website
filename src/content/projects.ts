@@ -1,6 +1,5 @@
 // Projects / Case Studies content.
 // Add or replace entries here. Tags, problem, approach, and impact fields drive the card layout.
-// PLACEHOLDER: All entries below are illustrative. Replace with real case studies.
 
 export type Tag =
   | 'Computer Vision'
@@ -15,13 +14,14 @@ export type Tag =
 
 export interface Project {
   id: string
+  slug?: string          // when present, card links to /projects/[slug]
   title: string
   problem: string
   approach: string
   impact: string
-  timeline:string
+  timeline: string
   tags: Tag[]
-
+  featured?: boolean
 }
 
 export const projectsPage = {
@@ -30,19 +30,19 @@ export const projectsPage = {
     'A cross-section of engagements spanning data engineering, applied AI, and strategic analysis.',
 }
 
-// Add real case studies here when ready.
-// Each entry needs: id, title, problem, approach, impact, and tags.
 export const projects: Project[] = [
   {
-    id: 'virginia-retail-expansion',
-    title: 'Retail Expansion Strategy — Second Location, Virginia',
+    id: 'nova-retail-expansion',
+    slug: 'nova-retail-expansion',
+    title: 'Northern Virginia & Mid-Atlantic Retail Expansion Analysis',
     problem:
-      'A small business owner needed a data-driven framework to identify the optimal city and site for a second retail location in Virginia, with a defined target customer profile and limited capital budget.',
+      'A multi-location boutique beauty & personal care brand in the DMV needed a data-driven framework to evaluate optimal retail expansion footprints across Northern Virginia and secondary Mid-Atlantic corridors within a $3,500–$4,500/month lease budget and 800–1,000 sq ft footprint.',
     approach:
-      'Will conduct demographic and income analysis across Virginia markets, layered with spatial foot-traffic data and competitive density mapping. Paired quantitative findings with operational planning and budget modeling to produce a prioritized shortlist of viable locations.',
+      'U.S. Census ACS demographic extraction via Python/Pandas across 5 Northern Virginia counties; whole-number age bracket headcount modeling; spatial income-to-rent ratio analysis; target demographic density filtering (female population aged 20–60); and commercial lease screening across LoopNet, Crexi, and CommercialCafe.',
     impact:
-      'Engagement begins shortly. Initial analysis and location recommendation expected within the first month. (Pro-bono engagement)',
-    timeline: '3 months',
+      'Evaluated 5 counties and 15+ commercial retail properties across 3 states. Narrowed expansion shortlist to 4 turnkey submarkets meeting the $3.5k–$4.5k/mo threshold. Vienna/Tysons corridor identified as top-ranked submarket with 90/100 composite score.',
+    timeline: '2025–2026',
     tags: ['Market Analysis', 'Spatial Analytics', 'Python / Data Pipelines', 'Data Analysis'],
+    featured: true,
   },
 ]

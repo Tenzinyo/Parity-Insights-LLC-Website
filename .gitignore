@@ -16,3 +16,6 @@ out/
 # Misc
 *.tsbuildinfo
 next-env.d.ts
+
+# Raw analysis notebooks — keep off the public web bundle
+*.ipynb
