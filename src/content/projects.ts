@@ -11,6 +11,9 @@ export type Tag =
   | 'Internal Tooling'
   | 'Data Analysis'
   | 'Software Architecture'
+  | 'Product Engineering'
+  | 'React / Next.js'
+  | 'Full-Stack'
 
 export interface Project {
   id: string
@@ -22,6 +25,7 @@ export interface Project {
   timeline: string
   tags: Tag[]
   featured?: boolean
+  liveUrl?: string       // when present, shows a "View Live" button
 }
 
 export const projectsPage = {
@@ -31,6 +35,21 @@ export const projectsPage = {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'go-to-market-tracker',
+    slug: 'go-to-market-tracker',
+    title: 'Go-to-Market Strategy Tracker',
+    problem:
+      'GTM and revenue teams split their workflow across a CRM, spreadsheets, a project tool, and a reporting dashboard — none connected. Pipeline health is invisible, lead conversion gaps go unnoticed, and activity logging is manual.',
+    approach:
+      'Built a full-stack GTM platform with pipeline kanban (Sales/Onboarding/Customer Success), lead lifecycle funnel (Lead → MQL → SQL → Opportunity → Customer), voice activity logging via local Whisper model, and a custom report builder with CSV export. Seeded with a realistic B2B book of business.',
+    impact:
+      '$3.5M demo pipeline across 12+ institutional accounts (Bridgewater, Citadel, Vanguard, BlackRock). 10+ application modules. Voice logging works fully offline via Whisper after first download. Live on Netlify.',
+    timeline: '2025–2026',
+    tags: ['Product Engineering', 'React / Next.js', 'Full-Stack', 'Internal Tooling'],
+    featured: true,
+    liveUrl: 'https://go-to-market-tracker.netlify.app',
+  },
   {
     id: 'nova-retail-expansion',
     slug: 'nova-retail-expansion',

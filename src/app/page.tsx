@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { site } from '@/content/site'
 
 const pillars = [
@@ -49,8 +50,20 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="min-h-screen flex flex-col justify-center pt-16 px-6">
-        <div className="max-w-6xl mx-auto w-full py-24 md:py-32">
+      <section className="relative min-h-screen flex flex-col justify-center pt-16 px-6 overflow-hidden">
+        {/* Background logo watermark */}
+        <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none">
+          <Image
+            src="/logo.jpeg"
+            alt=""
+            width={700}
+            height={700}
+            className="opacity-[0.06] mix-blend-multiply translate-x-24 md:translate-x-16"
+            unoptimized
+            priority
+          />
+        </div>
+        <div className="relative max-w-6xl mx-auto w-full py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.25em] text-brand-muted mb-8">
             Technology & Economic Consulting
           </p>
@@ -103,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Featured Case Study ── */}
+      {/* ── Featured Work ── */}
       <section className="border-t border-brand-border px-6 py-24 md:py-32 bg-brand-near-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
@@ -116,64 +129,126 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="border border-brand-border bg-white p-8 md:p-10">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {['Market Analysis', 'Spatial Analytics', 'Python / Data Pipelines', 'Data Analysis'].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] uppercase tracking-widest px-2.5 py-1 border border-brand-border text-brand-muted"
-                >
-                  {tag}
-                </span>
-              ))}
-              <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-brand-orange text-white ml-auto">
-                Featured
-              </span>
-            </div>
+          <div className="flex flex-col gap-8">
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-brand-black mb-4 leading-snug">
-                  Northern Virginia & Mid-Atlantic Retail Expansion Analysis
-                </h2>
-                <p className="text-sm text-brand-sub leading-relaxed mb-6">
-                  Census ACS demographic extraction across 5 Northern Virginia counties — evaluating
-                  female target density (ages 20–60), median household income, and commercial lease
-                  feasibility across a $3,500–$4,500/mo budget to identify optimal retail footprints
-                  for a DMV-based boutique brand.
-                </p>
-                <div className="flex flex-wrap gap-4 text-xs text-brand-muted mb-8">
-                  <span>5 counties evaluated</span>
-                  <span className="text-brand-border">|</span>
-                  <span>15+ commercial sites screened</span>
-                  <span className="text-brand-border">|</span>
-                  <span>4 submarkets shortlisted</span>
-                </div>
-                <Link
-                  href="/projects/nova-retail-expansion"
-                  className="inline-block bg-brand-blue text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 hover:bg-brand-blue-dark transition-colors"
-                >
-                  Read Case Study
-                </Link>
-              </div>
-
-              {/* Mini stats */}
-              <div className="grid grid-cols-2 gap-4 content-start">
-                {[
-                  { county: 'Fairfax', pop: '625,980', label: 'Female 20–59' },
-                  { county: 'Loudoun', hhi: '$205,596', label: 'Median HHI (25–44)' },
-                  { county: 'Arlington', pop: '153,432', label: 'Female 20–59' },
-                  { county: 'Prince William', pop: '273,112', label: 'Female 20–59' },
-                ].map((stat) => (
-                  <div key={stat.county} className="bg-brand-near-black p-4 border border-brand-border">
-                    <p className="text-[10px] uppercase tracking-widest text-brand-muted mb-1">{stat.county}</p>
-                    <p className="text-xl font-bold text-brand-blue">{stat.pop ?? stat.hhi}</p>
-                    <p className="text-[10px] text-brand-muted mt-0.5">{stat.label}</p>
-                  </div>
+            {/* Card 1 — GTM Tracker (Product Engineering) */}
+            <div className="border border-brand-border bg-white p-8 md:p-10">
+              <div className="flex flex-wrap gap-2 mb-6">
+                {['Product Engineering', 'React / Next.js', 'Full-Stack'].map((tag) => (
+                  <span key={tag} className="text-[10px] uppercase tracking-widest px-2.5 py-1 border border-brand-border text-brand-muted">
+                    {tag}
+                  </span>
                 ))}
+                <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-brand-orange text-white ml-auto">
+                  Featured
+                </span>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-brand-black mb-4 leading-snug">
+                    Go-to-Market Strategy Tracker
+                  </h2>
+                  <p className="text-sm text-brand-sub leading-relaxed mb-6">
+                    A full-stack GTM platform with pipeline kanban, lead lifecycle funnel (Lead → MQL → SQL
+                    → Customer), voice activity logging via local Whisper, and a custom report builder with
+                    CSV export. Seeded with $3.5M in B2B demo pipeline across 12+ institutional accounts.
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-xs text-brand-muted mb-8">
+                    <span>$3.5M demo pipeline</span>
+                    <span className="text-brand-border">|</span>
+                    <span>10+ app modules</span>
+                    <span className="text-brand-border">|</span>
+                    <span>Live on Netlify</span>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/projects/go-to-market-tracker"
+                      className="inline-block bg-brand-blue text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 hover:bg-brand-blue-dark transition-colors"
+                    >
+                      View Case Study
+                    </Link>
+                    <a
+                      href="https://go-to-market-tracker.netlify.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block border border-brand-border text-brand-black text-xs uppercase tracking-widest font-semibold px-6 py-3 hover:border-brand-black transition-colors"
+                    >
+                      Live Demo ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Screenshot preview */}
+                <div className="relative w-full aspect-[16/10] border border-brand-border bg-brand-near-black overflow-hidden">
+                  <Image
+                    src="/projects/gtm-tracker/screenshot-1.png"
+                    alt="Go-to-Market Tracker application screenshot"
+                    fill
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Card 2 — NOVA Retail Expansion (Market Analysis) */}
+            <div className="border border-brand-border bg-white p-8 md:p-10">
+              <div className="flex flex-wrap gap-2 mb-6">
+                {['Market Analysis', 'Spatial Analytics', 'Python / Data Pipelines', 'Data Analysis'].map((tag) => (
+                  <span key={tag} className="text-[10px] uppercase tracking-widest px-2.5 py-1 border border-brand-border text-brand-muted">
+                    {tag}
+                  </span>
+                ))}
+                <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 bg-brand-orange text-white ml-auto">
+                  Featured
+                </span>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 md:gap-16">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-brand-black mb-4 leading-snug">
+                    Northern Virginia & Mid-Atlantic Retail Expansion Analysis
+                  </h2>
+                  <p className="text-sm text-brand-sub leading-relaxed mb-6">
+                    Census ACS demographic extraction across 5 Northern Virginia counties — evaluating
+                    female target density (ages 20–60), median household income, and commercial lease
+                    feasibility across a $3,500–$4,500/mo budget to identify optimal retail footprints
+                    for a DMV-based boutique brand.
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-xs text-brand-muted mb-8">
+                    <span>5 counties evaluated</span>
+                    <span className="text-brand-border">|</span>
+                    <span>15+ commercial sites screened</span>
+                    <span className="text-brand-border">|</span>
+                    <span>4 submarkets shortlisted</span>
+                  </div>
+                  <Link
+                    href="/projects/nova-retail-expansion"
+                    className="inline-block bg-brand-blue text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 hover:bg-brand-blue-dark transition-colors"
+                  >
+                    Read Case Study
+                  </Link>
+                </div>
+
+                {/* Mini stats */}
+                <div className="grid grid-cols-2 gap-4 content-start">
+                  {[
+                    { county: 'Fairfax', pop: '625,980', label: 'Female 20–59' },
+                    { county: 'Loudoun', hhi: '$205,596', label: 'Median HHI (25–44)' },
+                    { county: 'Arlington', pop: '153,432', label: 'Female 20–59' },
+                    { county: 'Prince William', pop: '273,112', label: 'Female 20–59' },
+                  ].map((stat) => (
+                    <div key={stat.county} className="bg-brand-near-black p-4 border border-brand-border">
+                      <p className="text-[10px] uppercase tracking-widest text-brand-muted mb-1">{stat.county}</p>
+                      <p className="text-xl font-bold text-brand-blue">{stat.pop ?? stat.hhi}</p>
+                      <p className="text-[10px] text-brand-muted mt-0.5">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

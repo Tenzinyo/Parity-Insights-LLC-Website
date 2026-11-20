@@ -85,15 +85,27 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                {/* Link */}
-                {project.slug && (
-                  <div>
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="inline-block border border-brand-blue text-brand-blue text-xs uppercase tracking-widest font-semibold px-6 py-2.5 hover:bg-brand-blue hover:text-white transition-colors"
-                    >
-                      Read Full Case Study →
-                    </Link>
+                {/* Links */}
+                {(project.slug || project.liveUrl) && (
+                  <div className="flex flex-wrap gap-3">
+                    {project.slug && (
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="inline-block border border-brand-blue text-brand-blue text-xs uppercase tracking-widest font-semibold px-6 py-2.5 hover:bg-brand-blue hover:text-white transition-colors"
+                      >
+                        Read Full Case Study →
+                      </Link>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block border border-brand-border text-brand-muted text-xs uppercase tracking-widest font-semibold px-6 py-2.5 hover:border-brand-black hover:text-brand-black transition-colors"
+                      >
+                        View Live Demo ↗
+                      </a>
+                    )}
                   </div>
                 )}
               </article>
