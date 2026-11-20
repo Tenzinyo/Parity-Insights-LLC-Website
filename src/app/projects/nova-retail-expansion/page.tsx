@@ -223,7 +223,7 @@ function FemalePopChart() {
       <line x1={ML} y1={bottom} x2={W - MR} y2={bottom} stroke="#E2E8F0" strokeWidth="1.5" />
 
       {/* Chart title */}
-      <text x={ML} y={14} fontSize="9.5" fill="#64748B" fontFamily="system-ui, sans-serif" fontWeight="600" textTransform="uppercase" letterSpacing="0.08em">
+      <text x={ML} y={14} fontSize="9.5" fill="#64748B" fontFamily="system-ui, sans-serif" fontWeight="600" style={{ textTransform: "uppercase", letterSpacing: "0.08em" }}>
         Female Population (Ages 20–59)
       </text>
     </svg>
@@ -279,7 +279,7 @@ function HHIChart() {
       <line x1={ML} y1={MT} x2={ML} y2={bottom} stroke="#E2E8F0" strokeWidth="1.5" />
       <line x1={ML} y1={bottom} x2={W - MR} y2={bottom} stroke="#E2E8F0" strokeWidth="1.5" />
 
-      <text x={ML} y={14} fontSize="9.5" fill="#64748B" fontFamily="system-ui, sans-serif" fontWeight="600" textTransform="uppercase" letterSpacing="0.08em">
+      <text x={ML} y={14} fontSize="9.5" fill="#64748B" fontFamily="system-ui, sans-serif" fontWeight="600" style={{ textTransform: "uppercase", letterSpacing: "0.08em" }}>
         Median Household Income — Householders 25–44
       </text>
     </svg>
