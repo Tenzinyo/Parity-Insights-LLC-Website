@@ -52,13 +52,13 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col justify-center pt-16 px-6 overflow-hidden">
         {/* Background logo watermark */}
-        <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <Image
             src="/logo.jpeg"
             alt=""
             width={700}
             height={700}
-            className="opacity-[0.06] mix-blend-multiply translate-x-24 md:translate-x-16"
+            className="opacity-[0.06] mix-blend-multiply"
             unoptimized
             priority
           />
