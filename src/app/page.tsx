@@ -52,7 +52,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col justify-center pt-16 px-6 overflow-hidden">
         {/* Background logo watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none">
           <Image
             src="/logo.jpeg"
             alt=""
