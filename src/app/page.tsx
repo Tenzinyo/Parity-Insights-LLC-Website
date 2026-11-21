@@ -68,7 +68,7 @@ export default function Home() {
             Technology & Economic Consulting
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-5xl font-black tracking-tighter leading-[0.92] text-brand-black mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-6xl font-black tracking-tighter leading-[0.92] text-brand-black mb-8">
             {headline}
             <br />
             <span className="text-brand-muted">{subline}</span>
